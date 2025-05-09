@@ -1,0 +1,189 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.wrapper {
+    width: 400px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.title-text {
+    display: flex;
+    width: 200%;
+    transition: margin-left 0.3s ease;
+}
+
+.title {
+    width: 50%;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    margin: 0 auto; /* Centering */
+    transition: all 0.3s ease-in-out;
+}
+
+.title:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+.title.login {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.title.signup {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.form-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide-controls {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #ddd;
+    background: #f9f9f9;
+}
+
+.slide-controls input[type="radio"] {
+    display: none;
+}
+
+.slide-controls label {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    color: #888;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.slide-controls label:hover {
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.slide-controls .slider-tab {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #6a11cb;
+    transition: margin-left 0.3s ease;
+}
+
+.form-inner {
+    display: flex;
+    width: 300%;
+    transition: margin-left 0.3s ease;
+}
+
+.form-inner form {
+    width: 50%;
+    padding: 30px;
+}
+
+.form-inner .login {
+    margin-left: 0;
+    width:50%;
+}
+
+.form-inner .signup {
+    margin-left: -50%;
+    width:30%;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.field input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.3);
+}
+
+.field.btn {
+    margin-top: 30px;
+}
+
+.field.btn input {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-weight: 600; /* Slightly bolder text for better readability */
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px; /* Adjust padding for better button shape */
+    font-size: 16px;
+    text-align: center; /* Ensure text is centered */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.field.btn input:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.field.btn input:active {
+    transform: scale(0.98); /* Subtle press effect */
+}
+
+/*
+.field.btn input:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}*/
+
+.pass-link, .signup-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pass-link a, .signup-link a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.pass-link a:hover, .signup-link a:hover {
+    color: #2575fc;
+    text-decoration: underline;
+}

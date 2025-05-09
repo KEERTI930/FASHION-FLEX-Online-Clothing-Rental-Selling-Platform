@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="index.css"> <!-- External CSS Link -->
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Title Section -->
+        <div class="title-text">
+            <div class="title login">Login Form</div>
+            <div class="title signup">Signup Form</div>
+        </div>
+        
+        <!-- Form Container -->
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Signup</label>
+                <div class="slider-tab"></div>
+            </div>
+            
+            <div class="form-inner">
+                <!-- Login Form -->
+                <form action="login.php" method="POST" class="login">
+                    <div class="field">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="pass-link"><a href="forgot_password.php">Forgot password?</a></div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="signup-link">Not a member? <a href="#" id="go-to-signup">Signup now</a></div>
+                </form>
+                
+                <!-- Signup Form -->
+                <form action="signup.php" method="POST" class="signup">
+                    <div class="field">
+                        <input type="text" name="name" id="name" placeholder="Name" required>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Signup">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form toggling
+        const loginRadio = document.getElementById('login');
+        const signupRadio = document.getElementById('signup');
+        const loginForm = document.querySelector('.form-inner .login');
+        const signupForm = document.querySelector('.form-inner .signup');
+        const loginTitle = document.querySelector('.title-text .login');
+        const signupTitle = document.querySelector('.title-text .signup');
+        const sliderTab = document.querySelector('.slider-tab');
+        const goToSignupLink = document.getElementById('go-to-signup');
+
+        // Function to switch to the Signup form
+        function showSignupForm() {
+            signupRadio.checked = true;
+            loginForm.style.marginLeft = '-50%';
+            signupForm.style.marginLeft = '0%';
+            loginTitle.style.marginLeft = '-100%';
+            signupTitle.style.marginLeft = '0%';
+            sliderTab.style.marginLeft = '50%';
+        }
+
+        // Function to switch to the Login form
+        function showLoginForm() {
+            loginRadio.checked = true;
+            loginForm.style.marginLeft = '0%';
+            signupForm.style.marginLeft = '50%';
+            loginTitle.style.marginLeft = '0%';
+            signupTitle.style.marginLeft = '0%';
+            sliderTab.style.marginLeft = '0%';
+        }
+
+        // Event listeners for radio buttons
+        loginRadio.addEventListener('change', showLoginForm);
+        signupRadio.addEventListener('change', showSignupForm);
+
+        // Event listener for "Signup now" link
+        goToSignupLink.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            showSignupForm();
+        });
+    </script>
+</body>
+</html>

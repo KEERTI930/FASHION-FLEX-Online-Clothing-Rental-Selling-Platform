@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .order-info {
+            margin-bottom: 30px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+        
+        .order-items {
+            margin-top: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .status-processing {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-shipped {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+        
+        .status-delivered {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-cancelled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .tracking-progress {
+            margin-top: 40px;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 30px;
+        }
+        
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
+        
+        .progress-bar {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 3px;
+            background: #3498db;
+            z-index: 2;
+            transition: width 0.3s ease;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+        }
+        
+        .step-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .step.active .step-icon {
+            background: #3498db;
+        }
+        
+        .step.completed .step-icon {
+            background: #27ae60;
+        }
+        
+        .step-text {
+            font-size: 12px;
+            color: #95a5a6;
+            text-align: center;
+        }
+        
+        .step.active .step-text {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .step.completed .step-text {
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Tracking</h1>
+        
+        <div class="order-info">
+            <h2>Order Information</h2>
+            <div class="info-row">
+                <span class="info-label">Order ID:</span>
+                <span>#ORD-2023-98765</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Order Date:</span>
+                <span>October 15, 2023</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Customer:</span>
+                <span>John Doe</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Email:</span>
+                <span>john.doe@example.com</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Status:</span>
+                <span class="status status-shipped">Shipped</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Estimated Delivery:</span>
+                <span>October 22, 2023</span>
+            </div>
+        </div>
+        
+        <div class="order-items">
+            <h2>Order Items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Womens Floral Dress</td>
+                        <td>1</td>
+                        <td>$89.99</td>
+                        <td>$89.99</td>
+                    </tr>
+                    <tr>
+                        <td>Mens Jacket</td>
+                        <td>2</td>
+                        <td>$19.99</td>
+                        <td>$39.98</td>
+                    </tr>
+                    <tr>
+                        <td>Kids Party wear</td>
+                        <td>1</td>
+                        <td>$12.99</td>
+                        <td>$12.99</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3" style="text-align: right;">Subtotal:</th>
+                        <th>$142.96</th>
+                    </tr>
+                    <tr>
+                        <th colspan="3" style="text-align: right;">Shipping:</th>
+                        <th>$5.99</th>
+                    </tr>
+                    <tr>
+                        <th colspan="3" style="text-align: right;">Total:</th>
+                        <th>$148.95</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="tracking-progress">
+            <h2>Order Status</h2>
+            <div class="progress-steps">
+                <div class="progress-bar" style="width: 75%;"></div>
+                <div class="step completed">
+                    <div class="step-icon">✓</div>
+                    <div class="step-text">Order Placed</div>
+                </div>
+                <div class="step completed">
+                    <div class="step-icon">✓</div>
+                    <div class="step-text">Processing</div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">!</div>
+                    <div class="step-text">Shipped</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"></div>
+                    <div class="step-text">Delivered</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

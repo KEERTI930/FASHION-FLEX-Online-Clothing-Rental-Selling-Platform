@@ -1,0 +1,12 @@
+[2025-03-25 13:04:31] Script started
+[2025-03-25 13:04:31] User ID: 2
+[2025-03-25 13:04:31] Processing product ID: 3
+[2025-03-25 13:04:31] ERROR: Unknown column 'status' in 'where clause'
+[2025-03-25 13:04:55] Script started
+[2025-03-25 13:04:55] User ID: 2
+[2025-03-25 13:04:55] Processing product ID: 3
+[2025-03-25 13:04:55] ERROR: Unknown column 'status' in 'where clause'
+[2025-03-25 13:05:04] Script started
+[2025-03-25 13:05:04] User ID: 2
+[2025-03-25 13:05:04] Processing product ID: 2
+[2025-03-25 13:05:04] ERROR: Unknown column 'status' in 'where clause'
