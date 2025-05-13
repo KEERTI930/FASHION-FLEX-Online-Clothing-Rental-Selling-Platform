@@ -11,3 +11,4 @@ A full-featured website to buy and rent clothes. Built using PHP, MySQL, HTML, C
 ![Alt Text](https://github.com/KEERTI930/FASHION-FLEX-Online-Clothing-Rental-Selling-Platform/blob/main/Screenshot%20(105).png?raw=true)
 ![Alt Text](https://github.com/KEERTI930/FASHION-FLEX-Online-Clothing-Rental-Selling-Platform/blob/main/Screenshot%20(107).png?raw=true)
 ![Alt Text](https://github.com/KEERTI930/FASHION-FLEX-Online-Clothing-Rental-Selling-Platform/blob/main/Screenshot%20(109).png?raw=true)
+![Alt Text](https://github.com/KEERTI930/FASHION-FLEX-Online-Clothing-Rental-Selling-Platform/blob/main/Screenshot%20(118).png?raw=true)
